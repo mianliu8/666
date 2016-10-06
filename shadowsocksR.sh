@@ -131,8 +131,8 @@ pre_install(){
     fi
     # Set ShadowsocksR config password
     echo "Please input password for ShadowsocksR:"
-    read -p "(Default password: 51miaozan.cn):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="51miaozan.cn"
+    read -p "(Default password: teddysun.com):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
     echo
     echo "---------------------------"
     echo "password = ${shadowsockspwd}"
@@ -142,8 +142,8 @@ pre_install(){
     while true
     do
     echo -e "Please input port for ShadowsocksR [1-65535]:"
-    read -p "(Default port: 138):" shadowsocksport
-    [ -z "${shadowsocksport}" ] && shadowsocksport="138"
+    read -p "(Default port: 8989):" shadowsocksport
+    [ -z "${shadowsocksport}" ] && shadowsocksport="8989"
     expr ${shadowsocksport} + 0 &>/dev/null
     if [ $? -eq 0 ]; then
         if [ ${shadowsocksport} -ge 1 ] && [ ${shadowsocksport} -le 65535 ]; then
@@ -185,12 +185,12 @@ pre_install(){
 # Download files
 download_files(){
     # Download libsodium file
-    if ! wget --no-check-certificate -O libsodium-1.0.11.tar.gz https://github.com/mianliu8/666/raw/master/libsodium-1.0.11.tar.gz; then
+    if ! wget --no-check-certificate -O libsodium-1.0.11.tar.gz https://github.com/mianliu8/666/edit/master/libsodium-1.0.11.tar.gz; then
         echo "Failed to download libsodium-1.0.11.tar.gz!"
         exit 1
     fi
     # Download ShadowsocksR file
-    if ! wget --no-check-certificate -O manyuser.zip https://github.com/mianliu8/666/raw/master/manyuser.zip; then
+    if ! wget --no-check-certificate -O manyuser.zip https://github.com/mianliu8/666/edit/master/manyuser.zip; then
         echo "Failed to download ShadowsocksR file!"
         exit 1
     fi
